@@ -1,0 +1,3 @@
+[submodule "src/libs/piq"]
+	path = src/libs/piq
+	url = git@github.com:enlezlab/piq.git
