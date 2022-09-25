@@ -14,6 +14,15 @@ class DialogBox extends piq {
   style() {
     return `
       ${this.name()} {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        max-width: 320px;
+        position: relative;
+        color: #000;
+      }
+
+      .dialog-box {
         border: 1px solid #e4e4e4;
         width: 100%;
         display: block;
@@ -24,9 +33,10 @@ class DialogBox extends piq {
         display: grid;
         grid-gap: .2rem;
         grid-template-columns: 80px auto;
-        max-width: 320px;
         font-family: arial;
         position: relative;
+        text-decoration: none;
+        color: #000;
       }
 
       .dialog-box__img {
@@ -70,12 +80,14 @@ class DialogBox extends piq {
       ${this.name()} p {
         margin: 0;
         font-size: .8rem;
+        color: #000;
       }
 
       ${this.name()} .title {
         margin: 0;
         margin-bottom: .5rem;
         font-size: 1rem;
+        color: #000;
       }
 
       .dialog-box__btn-close {
@@ -109,17 +121,19 @@ class DialogBox extends piq {
 
   template() {
     return `
-      <div class="dialog-box__img">
-        <figure style="background-image: url('${super.props('img-src')}');">
-          <img src="${super.props('img-src')}" alt="">
-        </figure>
-      </div>
-      <section class="dialog-box__text">
-        <h2 class="title">
-          ${super.props('title')}
-        </h2>
-        <p>${super.props('summary')}</p>
-      </section>
+      <a href="${super.props('url')}" class="dialog-box">
+        <div class="dialog-box__img">
+          <figure style="background-image: url('${super.props('img-src')}');">
+            <img src="${super.props('img-src')}" alt="">
+          </figure>
+        </div>
+        <section class="dialog-box__text">
+          <h2 class="title">
+            ${super.props('title')}
+          </h2>
+          <p>${super.props('summary')}</p>
+        </section>
+      </a>
       <div class="dialog-box__btn-close">&times;</div>
     `;
   };
