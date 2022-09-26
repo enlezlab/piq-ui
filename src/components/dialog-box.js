@@ -77,13 +77,13 @@ class DialogBox extends piq {
         border-radius: 5px;
       }
 
-      ${this.name()} p {
+      .dialog-box p {
         margin: 0;
         font-size: .8rem;
         color: #000;
       }
 
-      ${this.name()} .title {
+      .dialog-box .title {
         margin: 0;
         margin-bottom: .5rem;
         font-size: 1rem;
