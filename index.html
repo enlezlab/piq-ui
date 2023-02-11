@@ -6,22 +6,57 @@
   <title></title>
   <script src="/piq.dist.js"></script>
   <script type="module" src="/src/components/dialog-box.js"></script>
+  <script type="module" src="/src/components/piq-button.js"></script>
   <script src="/src/utils/vvd.js"></script>
   <style>
     body {
       height: 10000px;
     }
+
+    body > section {
+      margin-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
 
-  <dialog-box
-    url="/"
-    img-src="/placeholder.jpg"
-    title="New Products Launch!"
-    summary="Limited time offer for early bird discount and more!!"
-  >
-  </dialog-box>
+  <section>
+    <dialog-box
+      url="/"
+      img-src="/placeholder.jpg"
+      title="New Products Launch!"
+      summary="Limited time offer for early bird discount and more!!"
+    >
+    </dialog-box>
+  </section>
+
+
+  <section>
+    <piq-button state="primary">
+      button primary
+    </piq-button>
+
+    <piq-button state="secondary">
+      button secondary
+    </piq-button>
+
+    <piq-button state="outline">
+      button outline
+    </piq-button>
+
+    <piq-button state="warning">
+      button warning
+    </piq-button>
+
+    <piq-button state="danger">
+      button danger
+    </piq-button>
+
+    <piq-button state="disabled">
+      button disabled
+    </piq-button>
+  </section>
+
 
     <script>
       const V = new VVD({

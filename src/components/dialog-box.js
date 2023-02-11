@@ -104,6 +104,7 @@ class DialogBox extends piq {
         background: #fff;
         font-weight: bold;
         font-size: 18px;
+        cursor: pointer;
       }
     `;
   };
