@@ -1,60 +1,4 @@
-
-
-export default class piq extends HTMLElement {
-
-  constructor() {
-    // Use super to access decendent's context
-    const s = super()
-
-    // Set Style
-    this.setStyle = () => {
-      const id = `style_${s.name()}`;;
-      const css = s.style();
-      const styleNode = document.getElementById(id);
-
-      if (styleNode) {
-        return;
-      }
-
-      const style = document.createElement('style');
-      style.id = id;
-      style.innerHTML = css;
-      document.head.appendChild(style);
-    };
-
-    // Render method for compoenent
-    this.render = async () => {
-
-      this.innerHTML = await s.template();
-
-      if (s.connected !== undefined) {
-        await s.connected();
-      }
-    };
-
-  };
-
-  props(s) {
-    // return attribute data
-    return this.getAttribute(s);
-  };
-
-  static get observedAttributes() {
-    return this.attr();
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (newValue === oldValue) {
-      return;
-    }
-    this.render();
-  }
-
-  connectedCallback() {
-    this.setStyle();
-    this.render();
-  };
-};import piq from '/src/libs/piq/dist/piq.dist.js';
+import piq from '/src/libs/piq/dist/piq.dist.js';
 
 class DialogBox extends piq {
   static attr = () => {
@@ -133,13 +77,13 @@ class DialogBox extends piq {
         border-radius: 5px;
       }
 
-      ${this.name()} p {
+      .dialog-box p {
         margin: 0;
         font-size: .8rem;
         color: #000;
       }
 
-      ${this.name()} .title {
+      .dialog-box .title {
         margin: 0;
         margin-bottom: .5rem;
         font-size: 1rem;

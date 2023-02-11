@@ -1,5 +1,3 @@
-import piq from '/src/libs/piq/dist/piq.dist.js';
-
 class DialogBox extends piq {
   static attr = () => {
     return [

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <script src="/piq.dist.js"></script>
   <script type="module" src="/src/components/dialog-box.js"></script>
   <script src="/src/utils/vvd.js"></script>
   <style>
@@ -22,5 +23,21 @@
   >
   </dialog-box>
 
+    <script>
+      const V = new VVD({
+        start: 500,
+        end: 5000,
+        callback: {
+          in: () => {
+            console.log('in range!');
+            document.body.style = 'border: 4px solid red;';
+          },
+          out: () => {
+            console.log('out of range');
+            document.body.style = '';
+          }
+        }
+      });
+    </script>
 </body>
 </html>
