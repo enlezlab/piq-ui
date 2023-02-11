@@ -17,8 +17,8 @@ const inRange = (range) => {
 };
 
 const VVD = function (conf) {
-  // const threshold = conf.threshold;
-  // const cfn = conf.callback
+  const cfnIn = conf.callback.in;
+  const cfnOut = conf.callback.out;
   const pos = window.scrollY;
 
   let triggered = false;
@@ -30,12 +30,12 @@ const VVD = function (conf) {
     });
 
     if (r === true && triggered === false) {
-      console.log('trigger.......');
+      cfnIn();
       triggered = true;
     }
 
     if (r === false && triggered === true) {
-      console.log('untrigger.......');
+      cfnOut();
       triggered = false;
     }
 
@@ -43,4 +43,3 @@ const VVD = function (conf) {
 
 };
 
-const V = new VVD();

@@ -5,8 +5,6 @@ mkdir dist
 
 dist="";
 
-dist+=$(cat ./src/libs/piq/dist/piq.dist.js);
-
 for entry in `ls ./src/components`; do
   dist+=$(cat ./src/components/$entry);
 done
