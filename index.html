@@ -7,10 +7,13 @@
   <script src="/piq.dist.js"></script>
   <script type="module" src="/src/components/dialog-box.js"></script>
   <script type="module" src="/src/components/piq-button.js"></script>
+  <script type="module" src="/src/components/piq-spinner.js"></script>
+  <script type="module" src="/src/components/piq-radio.js"></script>
   <script src="/src/utils/vvd.js"></script>
   <style>
     body {
       height: 10000px;
+      <!-- background: #333; -->
     }
 
     body > section {
@@ -29,7 +32,6 @@
     >
     </dialog-box>
   </section>
-
 
   <section>
     <piq-button state="primary">
@@ -55,6 +57,14 @@
     <piq-button state="disabled">
       button disabled
     </piq-button>
+  </section>
+
+  <section>
+    <piq-spinner></piq-spinner>
+  </section>
+
+  <section>
+    <piq-radio></piq-radio>
   </section>
 
 
