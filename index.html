@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>piq ui</title>
   <script src="/piq.dist.js"></script>
-  <script type="module" src="/src/components/dialog-box.js"></script>
+  <script src="/src/utils/vvd.js"></script>
   <script type="module" src="/src/components/piq-button.js"></script>
   <script type="module" src="/src/components/piq-spinner.js"></script>
   <script type="module" src="/src/components/piq-radio.js"></script>
-  <script src="/src/utils/vvd.js"></script>
+  <script type="module" src="/src/components/dialog-box.js"></script>
+  <script type="module" src="/src/components/social-share.js"></script>
   <style>
-    body {
-      height: 10000px;
-      <!-- background: #333; -->
-    }
+    <!-- body { -->
+    <!--   height: 10000px; -->
+    <!--   background: #333; -->
+    <!-- } -->
 
     body > section {
       margin-bottom: 2rem;
@@ -22,6 +23,17 @@
   </style>
 </head>
 <body>
+
+  <section>
+  <social-share
+    btn-text="Share This Article"
+    widget-title="Share This Article On"
+    fg-color="#333"
+    bg-color="#fff"
+  >
+  </social-share>
+
+  </section>
 
   <section>
     <dialog-box
@@ -59,30 +71,30 @@
     </piq-button>
   </section>
 
-  <section>
-    <piq-spinner></piq-spinner>
-  </section>
+  <!-- <section> -->
+  <!--   <piq-spinner></piq-spinner> -->
+  <!-- </section> -->
 
   <section>
     <piq-radio></piq-radio>
   </section>
 
 
-    <script>
-      const V = new VVD({
-        start: 500,
-        end: 5000,
-        callback: {
-          in: () => {
-            console.log('in range!');
-            document.body.style = 'border: 4px solid red;';
-          },
-          out: () => {
-            console.log('out of range');
-            document.body.style = '';
-          }
-        }
-      });
-    </script>
+    <!-- <script> -->
+    <!--   const V = new VVD({ -->
+    <!--     start: 500, -->
+    <!--     end: 5000, -->
+    <!--     callback: { -->
+    <!--       in: () => { -->
+    <!--         console.log('in range!'); -->
+    <!--         document.body.style = 'border: 4px solid red;'; -->
+    <!--       }, -->
+    <!--       out: () => { -->
+    <!--         console.log('out of range'); -->
+    <!--         document.body.style = ''; -->
+    <!--       } -->
+    <!--     } -->
+    <!--   }); -->
+    <!-- </script> -->
 </body>
 </html>
